@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postInsight</title>
+    <link rel="icon" href="./assets/cloud.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body>
+
+    <div class="canvas">
+        <div class="app-layout">
+
+            <header>
+                <div class="logo-cont">
+                    <img class="brand-image" src="./assets/cloud.png" alt="">
+                    <p class="brand-name-cont">postInsight</p>
+                </div>
+                <p class="desc-cont">Analyze & Improve Your Social Media Content</p>
+            </header>
+
+
+            <main>
+                <section class="input-cont">
+                    <h2 class="input-heading-cont">Upload Your Post (PDF or Image)</h2>
+                    <div class="upload-box non-dragged-bg" id="upload-box">
+                        <img class="upload-image" src="./assets/cloud.png" alt="">
+                        <div class="upload-text">Drag & drop your file here or </div>
+                        <button type="button"  class="browse-btn" id="browse-btn">Browse</button>
+                    </div>
+                    <div class="upload-cont">
+                        <p class="file-name" id="file-name">file name will come here....</p>
+                    </div>
+
+                    <form   class="form" id="form">
+                        <input type="file" class="file-input" id="file-input"  accept=".pdf , image/*" hidden>
+                        <button type="submit" class="upload-btn" id="upload-btn">Upload</button>
+                    </form>
+
+                </section>
+
+                <section class="output-cont">
+                    <div class="extracted-text-cont">
+                        <h2 class="extracted-text-heading-cont">Extracted text</h2>
+                        <!-- <hr class="divider"> -->
+                        <p class="extracted-text" id="extracted-text"></p>
+                    </div>
+
+
+                    <div class="analysis-cont">
+                        <h2 class="analysis-heading-cont">Analysis Overview</h2>
+                        <!-- <hr class="divider"> -->
+                        <div class="numbers-cont">
+                            <div class="word-count-cont">
+                                <div class="word-count-text">Word Count :&nbsp;&nbsp;</div>
+                                <div class="word-count-number bold-number" id="word-count-number bold-number"></div>
+                            </div>
+                            <div class="hashtags-cont">
+                                <div class="hashtags-text">Hashtags :&nbsp;&nbsp;</div>
+                                <div class="hashtags-number bold-number" id="hashtags-number bold-number"></div>
+                            </div>
+                            <div class="cta-cont">
+                                <div class="cta-text">Call to Action :&nbsp;&nbsp;</div>
+                                <div class="cta-number bold-number" id="cta-number bold-number"></div>
+                            </div>
+                            <div class="sentiment-cont">
+                                <div class="sentiment-text">Sentiment :&nbsp;&nbsp;</div>
+                                <div class="sentiment-number bold-number" id="sentiment-number bold-number"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="ai-recommendation-cont">
+                    <h2 class="ai-recommendation-heading-cont">AI Recommendations</h2>
+                    <!-- <hr class="divider"> -->
+                    <div class="recommendation-text-cont" id="recommendation-text-cont">
+                        <!-- <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div>
+                        <div class="recommendation-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus?</div> -->
+                    </div>
+                </section>
+            </main>
+
+            <footer></footer>
+        </div>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+
+</body>
+
+</html>
