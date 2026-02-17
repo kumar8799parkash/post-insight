@@ -7,3 +7,5 @@ Tech Stack: Vanilla JavaScript, Node.js, Express.js, Multer, PDF-Parse, CORS.
 Folder Structure: backend/ (server code), docs/ (frontend for GitHub Pages), root config files.
 Live Demo: Hosted via GitHub Pages (docs folder).
 backend: hosted on render
+
+site URL : https://kumar8799parkash.github.io/post-insight/
