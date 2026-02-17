@@ -16,6 +16,11 @@ app.get('/' , (req ,res)=>{
     res.send("Hello world this is parker");
 })
 
+
+app.get("/health", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.use('/api' , analyzeRouter);
 
 app.listen(PORT , ()=>{
