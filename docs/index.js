@@ -16,6 +16,7 @@ const hashtagCount = document.getElementById('hashtags-number bold-number');
 const ctaCount = document.getElementById('cta-number bold-number');
 const sentimentCount = document.getElementById('sentiment-number bold-number');
 const recommendationTextCont = document.getElementById('recommendation-text-cont');
+const loader = document.getElementById('loader');
 let myForm = document.getElementById('form');
 
 if (!myForm) {
@@ -69,6 +70,7 @@ uploadBox.addEventListener('drop', (e) => {
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     //e.stopPropagation();
     console.log("STEP 1");
 
@@ -80,11 +82,15 @@ myForm.addEventListener('submit', async (e) => {
 
     console.log("STEP 2");
 
-    const formData = new FormData();
-    formData.append("myFile", myFile);
-
-    console.log(formData);
     try {
+
+        loader.classList.remove('hidden');
+        uploadBtn.disabled = true;
+
+        const formData = new FormData();
+        formData.append("myFile", myFile);
+        console.log(formData);
+
         const response = await fetch(`${configFile.backendURL}/api/analyze`, {
             method: "POST",
             body: formData
@@ -99,13 +105,16 @@ myForm.addEventListener('submit', async (e) => {
     }
     catch (err) {
         console.log("Fetching error : ", err);
+    } finally {
+        loader.classList.add('hidden');
+        uploadBtn.disabled = false;
     }
 
 })
 
 
-async function updateRecommendations(suggestions){
-    suggestions.forEach((suggestion,ind) => {
+async function updateRecommendations(suggestions) {
+    suggestions.forEach((suggestion, ind) => {
         const ele = document.createElement('div');
         ele.classList.add('recommendation-item');
         ele.textContent = suggestions[ind];
